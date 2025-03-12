@@ -158,13 +158,13 @@ CREATE TABLE payments (
 
 
 ## **4. Deployment & Scalability**
-### ** Sebelumnya (Monolitik)**
+###  Sebelumnya (Monolitik)
 - **Aplikasi berjalan dalam satu server besar.**
 - **Jika satu layanan crash, seluruh sistem ikut terganggu.**
 
 ---
 
-### ** Sekarang (Microservices)**
+### Sekarang (Microservices)
 - **Masing-masing layanan dapat dideploy secara independen.**
 - **Menggunakan Docker untuk menjalankan layanan secara terpisah.**
 - **Jika satu layanan gagal, layanan lain tetap bisa berjalan.**
