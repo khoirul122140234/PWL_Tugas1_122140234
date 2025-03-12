@@ -2,10 +2,9 @@
 
 Setelah melakukan perubahan pada proyek **ojek online**, berikut adalah **perbedaan utama** antara versi **monolitik** dan versi **microservices**:
 
----
 
 ## **1. Struktur Kode**
-### ** Sebelumnya (Monolitik)**
+###  Sebelumnya (Monolitik)
 - **Semua fitur berada dalam satu kodebase utama.**
 - **Semua API dan layanan berjalan dalam satu server** (misalnya, Laravel atau Java Spring dalam satu proyek).
 - **Database tunggal untuk semua layanan** (misalnya tabel pengguna, order, dan pembayaran dalam satu database MySQL).
@@ -21,9 +20,9 @@ ojek-online-master/
 └── ojekonline.sql
 ```
 
----
 
-### **Sekarang (Microservices)**
+
+### Sekarang (Microservices)
 - **Setiap fitur dipecah menjadi layanan terpisah dengan kodebase masing-masing.**
 - **Setiap layanan berjalan secara independen** (menggunakan Node.js dengan Express atau tetap mempertahankan Java untuk beberapa layanan).
 - **Database dipisah per layanan**, masing-masing memiliki skema dan tabelnya sendiri.
@@ -39,10 +38,10 @@ ojek-online-microservices/
 ├── database-scripts/ → Berisi file SQL terpisah untuk setiap layanan
 ```
 
----
+
 
 ## **2. Routing API**
-### ** Sebelumnya (Monolitik)**
+###  Sebelumnya (Monolitik)
 Semua API ditangani dalam satu aplikasi.
 
 ```php
@@ -53,9 +52,9 @@ Route::get('/order/{id}', 'OrderController@show');
 Route::post('/payment', 'PaymentController@process');
 ```
 
----
 
-### ** Sekarang (Microservices)**
+
+###  Sekarang (Microservices)
 **Menggunakan API Gateway untuk mengatur komunikasi antar layanan.**
 API dipecah menjadi beberapa service:
 
@@ -101,7 +100,7 @@ app.listen(5000, () => console.log('Order Service running on port 5000'));
 ---
 
 ## **3. Database**
-### ** Sebelumnya (Monolitik)**
+###  Sebelumnya (Monolitik)
 Semua data disimpan dalam **satu database MySQL**, yang menyebabkan skala aplikasi sulit diperbesar.
 
 ```sql
@@ -122,7 +121,7 @@ CREATE TABLE orders (
 
 ---
 
-### ** Sekarang (Microservices)**
+###  Sekarang (Microservices)
 **Database dipecah berdasarkan layanan.**  
 Setiap layanan memiliki database-nya sendiri.
 
@@ -156,7 +155,7 @@ CREATE TABLE payments (
 );
 ```
 
----
+
 
 ## **4. Deployment & Scalability**
 ### ** Sebelumnya (Monolitik)**
